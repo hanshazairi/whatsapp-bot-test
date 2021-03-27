@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/', methods = ['POST'])
 def bot():
-	client = Client(sid, token)
+	client = Client(${sid}, ${token})
 	msg = request.values.get('Body', '').lower()
 	responded = False
 	
