@@ -1,12 +1,13 @@
 from flask import Flask, request
 from twilio.rest import Client
+import os
 import requests
 
 app = Flask(__name__)
 
 @app.route('/', methods = ['POST'])
 def bot():
-	client = Client(${sid}, ${token})
+	client = Client(os.environ['SID'], os.environ['TOKEN'])
 	msg = request.values.get('Body', '').lower()
 	responded = False
 	
